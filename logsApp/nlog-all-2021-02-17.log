@@ -1,0 +1,8 @@
+2021-02-17 12:31:30.1782|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-02-17 12:31:30.2518|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-02-17 12:31:30.2662|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Imad\source\repos\MvcExercise\MvcExercise
+2021-02-17 13:12:11.1893|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-02-17 13:12:11.2737|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-02-17 13:12:11.3142|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\Imad\source\repos\MvcExercise\MvcExercise
+2021-02-17 13:14:29.8169|WARN|Microsoft.AspNetCore.Identity.UserManager|Invalid password for user.
+2021-02-17 13:14:29.8270|WARN|Microsoft.AspNetCore.Identity.SignInManager|User 1a422665-2f85-4397-8c59-ab25f8e92969 failed to provide the correct password.

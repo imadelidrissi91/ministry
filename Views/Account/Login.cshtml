@@ -1,0 +1,52 @@
+﻿
+@model AccountLoginViewModel
+@{
+
+    ViewBag.Title = "Login";
+}
+
+
+<div class="alert alert-info">Login Form</div>
+
+<div class="card">
+
+    <div class="card-body">
+        <form  method="post">
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input type="text" class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input type="Password" class="form-control" asp-for="Password" />
+                <span asp-validation-for="Password" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remember"></label>
+                <input class="custom-checkbox" asp-for="Remember" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark"> Add record</button>
+            </div>
+            <div class="text-black-50 text-danger" asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+@section CssEmployee {
+    <environment include="Development">
+        <script src="~/lib/jquery/jquery.js"></script>
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+    <environment include="Staging,Production">
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </environment>
+
+}

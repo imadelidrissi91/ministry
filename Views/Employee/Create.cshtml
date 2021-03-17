@@ -1,0 +1,70 @@
+﻿
+@model Employee
+@{
+
+    ViewBag.Title = "list of employees";
+}
+
+
+<div class="alert alert-info">Create employee</div>
+
+<div class="card">
+
+    <div class="card-body">
+        <form asp-action="Create" asp-controller="Employee" method="post">
+            <div class="form-group">
+                <label asp-for="Sexe"></label>
+                <select class="form-control" asp-for="Sexe">
+                    <option value="man">Homme</option>
+                    <option value="woman">Femme</option>
+                </select>
+                <span asp-validation-for="Sexe" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name" />
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input type="text" class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departement"></label>
+                <select class="form-control custom-list" asp-for="Departement"
+                        asp-items="Html.GetEnumSelectList<Departement>()">
+                    <option value="">select departement</option>
+                </select>
+                <span asp-validation-for="Departement" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark"> Add record</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+@section CssEmployee {
+    <environment include="Development">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+    <environment include="Staging,Production">
+
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+    </environment>
+
+}

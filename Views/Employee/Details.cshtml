@@ -1,0 +1,32 @@
+﻿@model Employee
+
+<div class="alert alert-info">details of employe, @Model.Id</div>
+
+    <div class="col-12 ">
+        <div class="card">
+
+            <div class="card-body">
+                <center>
+                    <img src="/Images/@Model.Photo" width="350" height="525" alt="Card image cap">
+                    <h5 class="card-title">@Model.Name</h5>
+                    <p class="card-text">@Model.Email</p>
+                    <p class="card-text">@Model.Departement</p>
+                </center>
+                        <div class="text-white">
+                            <a class="btn btn-primary" asp-action="Index" asp-controller="Employee">Back to list</a>
+                        </div>
+
+</div>
+        </div>
+    </div>
+        @section CssEmployee {
+            <environment include="Development">
+                <script src="~/lib/jquery/jquery.js"></script>
+                <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+                <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+            </environment>
+            <environment include="Staging,Production">
+                <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+            </environment>
+
+        }

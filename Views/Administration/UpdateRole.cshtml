@@ -1,0 +1,59 @@
+﻿
+@model AdministrationEditRoleViewModel
+@{
+
+    ViewBag.Title = "Edit Role";
+}
+
+
+
+<div class="card">
+
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Id"></label>
+                <input type="text" class="form-control" asp-for="Id" />
+                <span asp-validation-for="Id" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoleName"></label>
+                <input type="text" class="form-control" asp-for="RoleName" />
+                <span asp-validation-for="RoleName" class="small text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success"> Update Role</button>
+            </div>
+            <div class="text-black-50 text-danger" asp-validation-summary="All"></div>
+        </form>
+    </div>
+</div>
+<a asp-action="EditUsersRole" asp-route-idRole="@Model.Id" class="btn btn-success"> Add/remove user</a>
+<a asp-action="ListRole" class="btn btn-success"> Back to list</a>
+@if (Model.Users.Count == 0)
+{
+    <div class="alert alert-info">Any Users</div>
+}
+else
+{
+    foreach (var item in Model.Users)
+    {
+        <div class="alert alert-info">@item</div>
+    }
+}
+
+
+
+
+@section CssEmployee {
+    <environment include="Development">
+        <script src="~/lib/jquery/jquery.js"></script>
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+    <environment include="Staging,Production">
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </environment>
+
+}

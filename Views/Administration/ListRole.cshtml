@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<IdentityRole>;
+
+@{
+
+    ViewBag.Title = "list of Roles";
+}
+<div class="alert alert-info">List employees</div>
+
+<div class="row">
+    @{
+        foreach (IdentityRole item in Model)
+        {
+
+            <div class="col-12 col-sm-12 col-lg-4 col-md-6 col-xs-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Id</h5>
+                        <p class="card-text">@item.Name</p>
+                        <div class="text-white">
+                            <a asp-action="UpdateRole"  asp-route-id="@item.Id" class="btn btn-info">Update</a>
+                            <a asp-action="Delete"  asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+
+
+@section CssEmployee {
+    <environment include="Development">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+    <environment include="Staging,Production">
+
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+    </environment>
+
+}

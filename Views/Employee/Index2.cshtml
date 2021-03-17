@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <title>employee</title>
+</head>
+<body>
+    <p>
+        @{ 
+            MvcExercise.Models.Employee employee = (MvcExercise.Models.Employee)ViewData["emp"];
+        }
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Departement</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.Departement</td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    <h1>hello from view index on employee controller</h1>
+</body>
+</html>
