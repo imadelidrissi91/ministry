@@ -36,8 +36,8 @@ namespace MvcExercise
 
             });
             services.AddMvc(options => options.EnableEndpointRouting=false).AddXmlSerializerFormatters();
-            //services.AddSingleton<ICompanyRepository<Employee>, EmployeeRepository>();
-            services.AddScoped<ICompanyRepository<Employee>, SqlEmployeeRepository>();
+            services.AddSingleton<ICompanyRepository<Employee>, EmployeeRepository>();
+            //services.AddScoped<ICompanyRepository<Employee>, SqlEmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
